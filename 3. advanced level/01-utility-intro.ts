@@ -49,11 +49,11 @@
 // type Keys = 'id' | 'name' | 'tel' | 'active'
 // type Keys = keyof Customer
 // type PatchCustomerData = {
-//     [F in Keys]?: string
+//     [F in Keys]?: Customer[F]
 // }
 
 // type Patial<T> = {
-//     [F in keyof T]?: string
+//     [F in keyof T]?: T[F]
 //   }
 
 // type PatchCustomerData = Patial<Customer>
