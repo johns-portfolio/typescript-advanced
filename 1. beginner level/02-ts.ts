@@ -30,13 +30,11 @@
 // fibonacciList.push(13)
 
 // // Literal type
-// let pi: 3.14 = 3.14
-// pi = 10.1
-// pi = 3.14
-
-// let online: 'online' = 'online'
-// online = 'what'
-// online = 'online'
+// let age: 22 = 22
+// age = 23
+// age = 22
+// let myName: "John" = "John";
+// myName = "Jame"
 
 // let address: {
 //   province: 'Bangkok'

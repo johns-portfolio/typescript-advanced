@@ -8,15 +8,15 @@
 // const appConfig: AppConfig = {
 //   appName: 'Customer App',
 // }
-// appConfig.appName = 'What'
 // appConfig = {
 //   appName: 'Customer App',
 // }
+// appConfig.appName = 'What'
 
 // const fibonacciList: number[] = [1, 2, 3, 5, 8]
+// fibonacciList = [5, 8]
 // fibonacciList[0] = 100
 // fibonacciList.push(13)
-// fibonacciList = [1, 2, 3, 5, 8]
 
 // // ## readonly
 // type AppConfig = {
@@ -28,6 +28,7 @@
 //   timeout: 60,
 // }
 // appConfig.appName = 'What'
+// appConfig.appName = 'Customer App'
 // appConfig.timeout = 120
 
 // const fibonacciList: readonly number[] = [1, 2, 3, 5, 8]
@@ -35,11 +36,6 @@
 // fibonacciList.push(13)
 
 // // ## as const
-// const appConfigOld = {
-//   appName: 'Customer App',
-//   timeout: 60,
-// }
-
 // const appConfig = {
 //   appName: 'Customer App',
 //   timeout: 60,
@@ -60,9 +56,8 @@
 // }
 
 // type Field = 'appName' | 'timeout' | 'env'
-
-// type AppConfigField = keyof AppConfig
-// const f1: AppConfigField = 'timeout'
+// type Field = keyof AppConfig
+// const f1: Field = 'appName'
 
 // // ## typeof
 // const appConfig = {
