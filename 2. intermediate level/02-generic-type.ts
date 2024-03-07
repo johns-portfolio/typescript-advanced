@@ -1,4 +1,4 @@
-// // # any <=== bad code
+// // // # any <=== bad code
 // let myName: any = 'John'
 // myName = 200
 // myName = true
@@ -16,7 +16,7 @@
 
 // const res2: ApiResponse = {
 //   code: 200,
-//   data: "hello"
+//   data: true
 // }
 
 // // # Generic Type

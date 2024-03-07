@@ -1,4 +1,4 @@
-// // Require field vs optional field
+// // // Require field vs optional field
 // type Customer = {
 //   name: string
 //   age: number
@@ -11,33 +11,50 @@
 // }
 
 // // sub type
+
+// // lib.ts
 // type Customer = {
-//     id: string
-//     name: {
-//       firstName: string
-//       lastName: string
-//     }
-//     age: number
-//     address: {
-//       province: string
-//       moo: string
-//     }
+//   id: string
+//   name: {
+//     firstName: string
+//     lastName: string
 //   }
-// type Address = Customer['address']
+//   age: number
+//   address: {
+//     province: string
+//     moo: string
+//   }
+// }
+// // type Name = {
+// //   firstName: string
+// //   lastName: string
+// // }
+
+// type Address = Customer['name']
+
 // type NameType = Customer['name']
 
 // // in
-// type Color = 'red' | 'green' | 'blue'
+// lib.ts
+type Color = 'red' | 'green' | 'blue' | 'black'
+
 // type ColorData = {
-//     [F in Color]: string
+//   red: string
+//   green: string
+//   blue: string
+//   black: string
 // }
 
-// const colors: ColorData = {
-//     red: '#ff0000',
-//     green: '#00ffff',
-//     blue: '#0000ff',
-//     pink: '#ffff00'
-// }
+type ColorData = {
+  [Field in Color]: Field extends 'red' | 'green' ? number : string
+}
+
+const colors: ColorData = {
+  red: '#ff0000',
+  green: '#00ffff',
+  blue: '#0000ff',
+  blackxx: '#ffff00'
+}
 
 // // Hands-on
 // type Customer = {
@@ -63,6 +80,10 @@
 //     name?: string
 //     tel?: string
 //     active?: boolean
+// }
+
+// type PatchCustomerData = {
+//     [F in keyof Customer]?: Customer[F]
 // }
 
 // const patchData = (id: string, data: PatchCustomerData) => {

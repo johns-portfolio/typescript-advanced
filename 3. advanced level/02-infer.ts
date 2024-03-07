@@ -1,11 +1,12 @@
-// // infer
+// // // infer
+
+// // lib.ts
 // type OnlineCustomer = {
 //   name: string
 //   address: {
 //     province: string
 //   }
 // }
-
 // type LoyaltyCustomer = {
 //   name: string
 //   address: {
@@ -15,7 +16,11 @@
 //   }
 // }
 
-// type CustomerAddress<T> = T extends { address: infer R } ? R : {}
+// type CustomerAddress<T extends { address: any }> = T extends {
+//   address: infer R
+// }
+//   ? R
+//   : {}
 
 // const cusAddr: CustomerAddress<OnlineCustomer> = {
 //   province: 'Bangkok'
@@ -27,4 +32,4 @@
 //   road: 'Kanjana'
 // }
 
-// const cusAddr3: CustomerAddress<number> = {}
+// const cusAddr3: CustomerAddress<{ address: number[] }> = {}

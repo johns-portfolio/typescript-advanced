@@ -1,33 +1,38 @@
-// // extends
+// // // // extends
 // type OnlineCustomer = {
 //   name: string
-//   tel: string
+//   address: {
+//     province: string
+//   }
 // }
 
 // type LoyaltyCustomer = {
 //   name: string
-//   coin: number
-// }
-
-// type OnlineType = 'online'
-// type LoyaltyType = 'loyalty'
-// type CustomerType = OnlineType | LoyaltyType
-
-// // // ex. 1
-// type LotusCustomer<T extends CustomerType> = T extends LoyaltyType
-//   ? LoyaltyCustomer
-//   : OnlineCustomer
-
-// const myCust: LotusCustomer<LoyaltyType> = {
-//   name: 'John',
-//   coin: 1_000_000
-// }
-// const myCust2: LotusCustomer<OnlineType> = {
-//   name: 'John',
-//   tel: '081-222-3333'
-// }
-// const myCust3: LotusCustomer<'online'> = {
-//     name: 'John',
-//     tel: '081-222-3333'
+//   address: {
+//     moo: string
+//     soi: string
+//     road: string
 //   }
-// const myCust4: LotusCustomer<number> = {}
+// }
+
+// type CustomerType = 'online' | 'loyalty'
+
+// // // // ex. 1
+// type LotusCustomer<T extends CustomerType> = T extends 'loyalty' ? LoyaltyCustomer : OnlineCustomer
+// // type LotusCustomer<T extends CustomerType> = T extends 'loyalty' ? LoyaltyCustomer : OnlineCustomer
+
+// const cus1: LotusCustomer<'loyalty'> = {
+//   name: 'John',
+//   address: {
+//     moo: '1',
+//     soi: '222A',
+//     road: 'Kanjana'
+//   }
+// }
+
+// const cus2: LotusCustomer<'online'> = {
+//   name: 'John',
+//   address: {
+//     province: 'Bangkok'
+//   }
+// }
